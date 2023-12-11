@@ -1,2 +1,8 @@
-package org.example.estados;public class Normal {
+package org.example.estados;
+import lombok.Data;
+
+@Data
+public class Normal implements EstadoCancion{
+@Override
+public void definirEstado(){};
 }
