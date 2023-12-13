@@ -1,6 +1,7 @@
 package org.example.estados;
+
 import lombok.Data;
-import org.example.music.Cancion;
+import org.example.Cancion;
 
 @Data
 public class Auge implements EstadoCancion{
@@ -13,3 +14,4 @@ public class Auge implements EstadoCancion{
 
 
 }
+
