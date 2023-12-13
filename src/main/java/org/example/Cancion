@@ -1,0 +1,104 @@
+package org.example;
+
+import lombok.Data;
+import org.example.Icono;
+import org.example.estados.*;
+import java.time.LocalDate;
+
+@Data
+public class Cancion {
+    private String nombreCancion;
+    private String artista;
+    private String album;
+    private int lanzamiento;
+    private int likes;
+    private int disLikes;
+    private int views;
+    private EstadoCancion estado;
+    private Icono icono;
+    private LocalDate lastView;
+    public String mensaje;
+
+
+    public Cancion(String nombreCancion, String artista, String album){
+        this.nombreCancion = nombreCancion;
+        this.artista = artista;
+        this.album = album;
+        this.estado = new Normal();
+        this.icono = icono.MUSICAL_NOTE;
+        this.mensaje = getArtista() + " - " + getAlbum()
+                + " - " + nombreCancion;
+    }
+
+    public String getNombreCancion(){
+        return nombreCancion;
+    }
+    public void setNombreCancion(String nombreCancion) {
+        this.nombreCancion = nombreCancion;
+    }
+    public String getArtista(){
+        return artista;
+    }
+    public void setArtista(String artista){
+        this.artista = artista;
+    }
+    public String getAlbum(){
+        return album;
+    }
+    public void setAlbum(String album){
+        this.album = album;
+    }
+    public int getLanzamiento(){return lanzamiento;}
+    public void setLanzamiento(int lanzamiento){this.lanzamiento = lanzamiento;}
+    public int getLikes(){
+        return likes;
+    }
+    public void setLikes(int likes){
+        this.likes = likes;    }
+    public int getDisLikes(){
+        return disLikes;    }
+    public void setDisLikes(int disLikes){
+        this.disLikes = disLikes;    }
+    public int getViews(){
+        return views;    }
+    public void setViews(int views){
+        this.views = views;    }
+
+    public EstadoCancion getEstado() {
+        return estado;    }
+
+    public void setEstado(EstadoCancion estado) {
+        this.estado = estado;    }
+
+    public Icono getIcono() {
+        return icono;    }
+
+    public void setIcono(Icono icono) {
+        this.icono = icono;    }
+
+    public LocalDate getLastView() {
+        return lastView;    }
+
+    public void setLastView(LocalDate lastView) {
+        this.lastView = lastView;    }
+
+    public String getMensaje(){return mensaje;}
+    public void setMensaje(String mensaje){this.mensaje = mensaje;}
+
+
+    //METODOS DE CAMBIO DE ESTADO
+    public void aNormal(Cancion cancion){
+        this.estado.aNormal(cancion);
+    }
+    public void aAuge(Cancion cancion){
+        this.estado.aAuge(cancion);
+    }
+    public void aTendencia(Cancion cancion){
+        this.estado.aTendencia(cancion);
+    }
+
+    // METEDO PARA MENSAJE
+    public void show(){
+        System.out.println(getIcono() + " ." + getMensaje()+ "\n");
+    }
+}
