@@ -14,9 +14,10 @@ public class Normal implements EstadoCancion{
         if(cancion.getViews()>1000 && cancion.getDisLikes() < 5000){
             cancion.setEstado(new Auge());
             cancion.setIcono(Icono.ROCKET);
-            cancion.setMensaje(cancion.getArtista() +  cancion.getNombreCancion()
-            + cancion.getAlbum() + cancion.getLanzamiento());
+            cancion.setMensaje(cancion.getArtista() + " - " +  cancion.getNombreCancion()
+            + " - " + cancion.getAlbum() + " - " + cancion.getLanzamiento());
         }
     };
     public void aTendencia(Cancion cancion){};
 }
+
