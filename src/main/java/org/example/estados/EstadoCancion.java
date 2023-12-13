@@ -1,5 +1,6 @@
 package org.example.estados;
-import org.example.music.Cancion;
+import org.example.*;
+
 public interface EstadoCancion {
     void aNormal(Cancion cancion);
     void aAuge(Cancion cancion);
