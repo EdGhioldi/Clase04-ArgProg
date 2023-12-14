@@ -25,6 +25,10 @@ public class Cancion {
         this.artista = artista;
         this.album = album;
         this.estado = new Normal();
+        this.lastView = LocalDate.now();
+        this.disLikes = 0;
+        this.likes =  0;
+        this.views = 1;
         this.icono = icono.MUSICAL_NOTE;
         this.mensaje = getArtista() + " - " + getAlbum()
                 + " - " + nombreCancion;
@@ -99,6 +103,6 @@ public class Cancion {
 
     // METEDO PARA MENSAJE
     public void show(){
-        System.out.println(getIcono() + " ." + getMensaje()+ "\n");
+        System.out.println(getIcono() + " " + getMensaje()+ "\n");
     }
 }
